@@ -1,0 +1,69 @@
+%flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+%container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+%zeroing {
+  padding: 0;
+  margin: 0;
+}
+
+%list {
+  list-style: none;
+  @extend %zeroing;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.container {
+  max-width: $width-container;
+  @extend %container;
+}
+
+.header-container {
+  max-width: $width-header-container;
+  @extend %container;
+
+}
+
+.section-name {
+
+  h2 {
+    color: $grey;
+    font-family: $Oswald;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 3.2px;
+    @extend %zeroing;
+    text-transform: uppercase;
+  }
+
+  span {
+    color: $red;
+    font-family: $GreatVibes;
+    font-weight: 400;
+    letter-spacing: 3.2px;
+  }
+}
+
+
+

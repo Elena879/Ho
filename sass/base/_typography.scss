@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'DroidSansRegular'; //unfortunately, this is the best that I found on the internet
+  src: url('../../fonts/DroidSans/DroidSansRegular/DroidSansRegular.eot');
+  src: url('../../fonts/DroidSans/DroidSansRegular/DroidSansRegular.eot?#iefix')format('embedded-opentype'),
+  url('../../fonts/DroidSans/DroidSansRegular/DroidSansRegular.woff') format('woff'),
+  url('../../fonts/DroidSans/DroidSansRegular/DroidSansRegular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'DroidSansBold';
+  src: url('../../fonts/DroidSans/DroidSansBold/DroidSansBold.eot');
+  src: url('../../fonts/DroidSans/DroidSansBold/DroidSansBold.eot?#iefix')format('embedded-opentype'),
+  url('../../fonts/DroidSans/DroidSansBold/DroidSansBold.woff') format('woff'),
+  url('../../fonts/DroidSans/DroidSansBold/DroidSansBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+$DroidSansRegular: 'DroidSansRegular', sans-serif;
+
+$DroidSansBold: 'DroidSansBold', sans-serif;
+
+$OpenSans: 'Open Sans', sans-serif;
+
+$Oswald : 'Oswald', sans-serif;
+
+$GreatVibes: 'Great Vibes', cursive;

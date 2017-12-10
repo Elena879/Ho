@@ -1,0 +1,64 @@
+.go-over {
+  float: right;
+
+  a {
+    width: 35px;
+    background-color: $red;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 7px;
+
+    &:hover {
+      transition: 0.4s;
+      opacity: 0.8;
+    }
+
+    i {
+      color: $white;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 20px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.button {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  font-family: $DroidSansBold;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+
+  &:hover {
+    transition: 0.2s;
+    opacity: 0.9;
+  }
+}
+
+.main-button {
+  background-color: $red;
+  color: $white;
+  padding: 21px 46px;
+  margin-top: 90px;
+  display: inline-block;
+}
+
+.upcoming-button {
+  padding: 20px 40px;
+  margin-top: 30px;
+}
+
+.learn-more-button {
+  background-color: $white;
+  color: $red;
+  padding: 20px 40px;
+  margin-top: 47px;
+  display: inline-block;
+}
+
+
