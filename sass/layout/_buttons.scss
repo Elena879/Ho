@@ -59,6 +59,11 @@
   padding: 20px 40px;
   margin-top: 47px;
   display: inline-block;
+
+  &:hover {
+    transition: 0.2s;
+    opacity: 0.8;
+  }
 }
 
 

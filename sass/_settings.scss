@@ -37,12 +37,13 @@ img {
 .container {
   max-width: $width-container;
   @extend %container;
+  padding: 0 20px;
 }
 
 .header-container {
   max-width: $width-header-container;
   @extend %container;
-
+  padding: 0 20px;
 }
 
 .section-name {
@@ -55,14 +56,20 @@ img {
     letter-spacing: 3.2px;
     @extend %zeroing;
     text-transform: uppercase;
-  }
 
-  span {
-    color: $red;
-    font-family: $GreatVibes;
-    font-weight: 400;
-    letter-spacing: 3.2px;
+    span {
+      color: $red;
+      font-family: $GreatVibes;
+      font-weight: 400;
+      text-transform: none;
+      display: block;
+
+    }
   }
+}
+
+.footer-cont {
+
 }
 
 
