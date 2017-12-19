@@ -4,14 +4,8 @@
     bottom: 0;
     width: 100%;
     background-color: $main-color;
-    text-decoration: none;
     padding: 17px 0 24px 27px;
-    height: 80px;
-
-    &:hover {
-        height: 130px;
-    }
-
+    height: 83px;
     .performer {
 
         h3 {
@@ -27,4 +21,10 @@
             letter-spacing: normal;
         }
     }
+
+    &:hover {
+        height: 133px;
+    }
+
+
 }
