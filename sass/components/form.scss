@@ -7,11 +7,8 @@ form {
     border-bottom: 4px solid #999999;
 
     textarea {
-        &::-webkit-input-placeholder {letter-spacing: 3.2px;}
-        &::-moz-placeholder {letter-spacing: 3.2px;}
-        &:-moz-placeholder {letter-spacing: 3.2px;}
-        &:-ms-input-placeholder {letter-spacing: 3.2px;}
         @include appearance ('appearance', none);
+        @include placeholder { letter-spacing: 3.2px;}
         color: $form-color;
         font: 400 16px $main-font;
         border: none;

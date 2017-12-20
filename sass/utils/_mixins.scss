@@ -24,10 +24,18 @@
 }
 
 @mixin transition($property, $duration, $timing) {
-    -webkit-transition: $property, $duration, $timing;
-    -moz-transition: $property, $duration, $timing;
-    -o-transition: $property, $duration, $timing;
-    transition: $property, $duration, $timing;
+    -webkit-transition: $property  $duration $timing;
+    -moz-transition: $property $duration $timing;
+    -o-transition: $property $duration $timing;
+    transition: $property $duration $timing;
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &.placeholder { @content; }
 }
 
 
