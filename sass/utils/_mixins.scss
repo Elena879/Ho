@@ -38,5 +38,11 @@
     &.placeholder { @content; }
 }
 
+@mixin column-count($number) {
+    -webkit-column-count: $number;
+    -moz-column-count: $number;
+    column-count: $number;
+}
+
 
 

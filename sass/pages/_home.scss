@@ -220,9 +220,8 @@
 
     .songs {
         @include list;
+        @include column-count(3);
         margin-top: 20px;
-        column-count: 3;
-
         li {
             padding: 10px 0 15px 0;
             margin-right: 60px;
