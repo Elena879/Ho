@@ -1,10 +1,10 @@
-jQuery(window).load(function () {
+/*jQuery(window).load(function () {
   jQuery('.flexslider').flexslider({
     animation: 'slide',
     controlNav: false,
     directionNav: false
   })
-})
+})*/
 
 
 jQuery(document).ready(function (event) {

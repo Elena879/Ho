@@ -32,13 +32,45 @@ form {
             outline: none;
         }
 
-
-
-
         i {
             color: $main-color;
             font-size: 16px;
             font-weight: 400;
+        }
+    }
+}
+
+.popup-content {
+    padding: 20px 40px;
+    form {
+        margin-top: 10px;
+        font: 400 16px $main-font;
+        border: none;
+        .email {
+            width: 70%;
+            border: 2px solid $black;
+            padding: 14px;
+            @include appearance ('appearance', none);
+            border-radius: 10px;
+            margin-right: 1px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        .submit {
+            border-radius: 10px;
+            width: 30%;
+            background: none;
+            border: 2px solid $black;
+            @include appearance ('appearance', none);
+            &:hover {
+                background: rgba(0, 0, 0, 0.1);
+                transition: 0.3s ;
+            }
+            &:focus {
+                outline: none;
+            }
         }
     }
 }
