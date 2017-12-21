@@ -48,12 +48,11 @@
         }
     }
     .main-text {
-        top: 208px;
-        bottom: 174px;
+        top: 158px;
         position: absolute;
         width: 100%;
         text-align: center;
-        z-index: 10;
+        z-index: 1;
         margin: 0 auto;
         h1 {
             color: $main-color;
@@ -69,10 +68,6 @@
             }
         }
     }
-
-
-
-
 }
 
 .introducing-block {
