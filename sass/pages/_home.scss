@@ -1,33 +1,78 @@
 .main-section {
-    background: url('../img/main-bg.png') no-repeat center top / cover;
-    text-align: center;
-    padding: 208px 0 174px 0;
-    border-bottom: 3px solid #d3d3d3;
-
     &:after {
         content: '';
         display: block;
-        position: relative;
-        bottom: -177px;
-        max-width: 1500px;
-        width: 100%;
         height: 3px;
-        background-color: $main-color;
+        width: 100%;
+        background-color: $main-section-border;
+        position: relative;
+        bottom: 3px;
+    }
+    .progress {
+        border: 3px solid $main-color;
     }
 
-    h1 {
-        color: $main-color;
-        font: bold 116px $secondary-font;
-        text-transform: uppercase;
-        @include reset;
 
-        span {
-            color: $secondary-color;
-            font: 400 80px $font-cursive;
-            text-transform: none;
+    .flexslider {
+        //padding: 208px 0 174px 0;
+        margin: 0;
+        border: none;
+
+        &:after {
+            content: '';
             display: block;
+            position: relative;
+            z-index: 10;
+            bottom: 0;
+            max-width: 1500px;
+            width: 75%;
+            height: 3px;
+            background-color: $main-color;
+        }
+
+        .slides {
+            li {
+                height: 700px;
+            }
+            .first-bg {
+                background: url('../img/main-bg.png') no-repeat center top / cover;
+
+            }
+            .second-bg {
+                background: url('../img/girl-with-guitar.png') no-repeat center top / cover;
+
+            }
+            .third-bg {
+                background: url('../img/man-with-guitar.png') no-repeat center top / cover;
+            }
         }
     }
+    .main-text {
+        top: 208px;
+        bottom: 174px;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+        margin: 0 auto;
+        h1 {
+            color: $main-color;
+            font: bold 116px $secondary-font;
+            text-transform: uppercase;
+            @include reset;
+
+            span {
+                color: $secondary-color;
+                font: 400 80px $font-cursive;
+                text-transform: none;
+                display: block;
+            }
+        }
+    }
+
+
+
+
 }
 
 .introducing-block {
