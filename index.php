@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
     <div class="header-container">
         <nav>
             <ul class="menu-items list">
-                <li><a href="#">home</a>
+                <li><a href="#"></a>
                     <div class="overlay"></div>
                 </li>
                 <li><a href="#">Events</a>
@@ -76,9 +77,10 @@
         <div class="section-name">
             <h2>INTRODUCING<span>Our Members</span></h2>
         </div>
-        <div class="go-over">
-            <a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <div class="custom-navigation">
+            <a href="#" class="flex-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+            <div class="custom-controls-container"></div>
+            <a href="#" class="flex-next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
         </div>
         <div class="flexslider-introducing">
             <ul class="slides">
@@ -255,9 +257,10 @@
                     <h2>Latest
                         <span>Videos</span></h2>
                 </div>
-                <div class="go-over">
-                    <a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                <div class="custom-navigation-videos">
+                    <a href="#" class="flex-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    <div class="custom-controls-container-videos"></div>
+                    <a href="#" class="flex-next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </div>
                 <div class="flexslider-videos">
                     <ul class="slides">
@@ -274,7 +277,7 @@
                                     frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                         </li>
                         <li>
-                            <iframe src="https://www.youtube.com/embed/6Fqozggi-44?rel=0&amp;controls=0&amp;showinfo=0"
+                            <iframe src="https://www.youtube.com/embed/ByZc23y7lNE?rel=0&amp;controls=0&amp;showinfo=0"
                                     frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                         </li>
                     </ul>

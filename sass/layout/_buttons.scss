@@ -1,6 +1,9 @@
-.go-over {
-    display: block;
+.custom-navigation, .custom-navigation-videos  {
     text-align: right;
+
+    .custom-controls-container, .custom-controls-container-videos {
+        display: inline-block;
+    }
 
     a {
         width: 35px;
@@ -13,6 +16,7 @@
         &:hover {
             transition: 0.4s;
             opacity: 0.8;
+            outline: none;
         }
 
         i {

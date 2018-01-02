@@ -11,15 +11,15 @@ jQuery(window).load(function () {
     animationLoop: false,
     itemWidth: 380,
     itemMargin: 30,
-    controlNav: false,
-    customDirectionNav:".go-over"
+    controlsContainer: $(".custom-controls-container"),
+    customDirectionNav: $(".custom-navigation a")
   })
 
   jQuery('.flexslider-videos').flexslider({
     animation: "slide",
     animationLoop: false,
-    controlNav: false,
-    customDirectionNav:".go-over"
+    controlsContainer: $(".custom-controls-container-videos"),
+    customDirectionNav: $(".custom-navigation-videos a")
   })
 
   jQuery('.flexslider-concert').flexslider({
