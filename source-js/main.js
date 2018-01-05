@@ -27,9 +27,8 @@ jQuery(window).load(function () {
     controlNav: false,
     directionNav: false,
     slideshowSpeed : 8000
-  })
-})
-
+ })
+ })
 jQuery(document).ready(function (event) {
   jQuery('.learn-more-button').on('click', function () {
     jQuery('.popup').fadeIn(300)

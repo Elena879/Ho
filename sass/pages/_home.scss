@@ -78,15 +78,18 @@
     max-width: 270px;
 
     .date-concert {
-        left: 110px;
-        top: 110px;
         position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 110px;
         max-width: 49px;
         color: $white;
         font: 700 32px/1 $secondary-font;
         letter-spacing: 3.2px;
 
         span {
+            display: block;
             font-size: 45px;
             letter-spacing: normal;
         }
@@ -141,8 +144,8 @@
 
 .learn-more {
     .learn-block {
-        background: url('../img/bg-oldman.png') no-repeat center top / cover;
         padding: 86px 0 81px 100px;
+        background: url('../img/bg-man.png') no-repeat center top / cover;
 
         h2 {
             color: $white;
@@ -157,6 +160,7 @@
             @include reset;
 
             span {
+                text-transform: lowercase;
                 color: $white;
                 font: 400 65px $font-cursive;
             }

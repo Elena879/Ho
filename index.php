@@ -1,9 +1,9 @@
-
+<?php $data = require 'data.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cantus</title>
+    <title><?php echo $siteTitle ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,500" rel="stylesheet">
@@ -17,42 +17,34 @@
     <div class="header-container">
         <nav>
             <ul class="menu-items list">
-                <li><a href="#"></a>
-                    <div class="overlay"></div>
-                </li>
-                <li><a href="#">Events</a>
-                    <div class="overlay"></div>
-                </li>
-                <li><a href="#">Gallery</a>
-                    <div class="overlay"></div>
-                </li>
-                <li><a href="#">News</a>
-                    <div class="overlay"></div>
-                </li>
-                <li><a href="#">Albums</a>
-                    <div class="overlay"></div>
-                </li>
-                <li><a href="#">Pages</a>
-                    <div class="overlay"></div>
-                </li>
+                <?php
+                foreach ($data['mainMenu'] as $menuItem) {
+                    ?>
+                    <li><a href="<?php echo $menuItem['url']; ?>"><?php echo $menuItem['title']; ?></a>
+                        <div class="overlay"></div>
+                    </li>
+                    <?php
+                }
+                ?>
             </ul>
-            <a href="#"><img src="img/logo.png" alt="Cantus"></a>
+            <a href="#"><img src="<?php $siteLogo = $data['siteLogo'];
+                echo $siteLogo; ?>" alt="Cantus"></a>
             <div class="right-menu">
                 <ul class="social-items list">
-                    <li>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <span>32k</span>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <span>52k</span>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                        <span>23k</span>
-                    </li>
+                    <?php
+                    foreach ($data['socialLinks'] as $socialItem) {
+                        ?>
+                        <li>
+                            <a href="#"><i class="<?php echo $socialItem['class']; ?>" aria-hidden="true"></i></a>
+                            <span><?php echo $socialItem['count']; ?></span>
+                        </li>
+                        <?php
+                    }
+                    ?>
                 </ul>
-                <a href="#" class="button purchase">Purchase Ticket</a>
+                <?php $purchaseButton = $data['buttonBuy']; ?>
+                <a href="<?php echo $purchaseButton['url']; ?>"
+                   class="purchase button"><?php echo $purchaseButton['title']; ?></a>
             </div>
         </nav>
     </div>
@@ -60,14 +52,17 @@
 <section class="main-section">
     <div class="flexslider">
         <ul class="slides">
-            <li class="first-bg"></li>
-            <li class="second-bg"></li>
-            <li class="third-bg"></li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
         <div class="main-text">
             <div class="container">
-                <h1>Let’s Rock<span>With Cantus</span></h1>
-                <a href="#" class="button main-button">DISCOVER MORE</a>
+                <h1><?php $mainHeading = $data['mainHeading'];
+                    echo $mainHeading['title']; ?>
+                    <span><?php echo $mainHeading['partOfTitle']; ?></span></h1>
+                <a href="#" class="button main-button"><?php $buttonMain = $data['buttonMain'];
+                    echo $buttonMain; ?></a>
             </div>
         </div>
     </div>
@@ -75,130 +70,49 @@
 <section class="introducing">
     <div class="container introducing-block">
         <div class="section-name">
-            <h2>INTRODUCING<span>Our Members</span></h2>
+            <h2><?php $introducingHeading = $data['introducingHeading'];
+                echo $introducingHeading['title']; ?>
+                <span><?php echo $introducingHeading['partOfTitle']; ?></span></h2>
         </div>
         <div class="custom-navigation">
-            <a href="#" class="flex-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+            <a href="#" class="flex-prev"><i
+                    class="<?php $introducingDirectionLinks = $data['introducingDirectionLinks'];
+                    echo $introducingDirectionLinks['classPrev']; ?>" aria-hidden="true"></i></a>
             <div class="custom-controls-container"></div>
-            <a href="#" class="flex-next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="#" class="flex-next"><i class="<?php echo $introducingDirectionLinks['classNext']; ?>"
+                                             aria-hidden="true"></i></a>
         </div>
         <div class="flexslider-introducing">
             <ul class="slides">
-                <li>
-                    <img src="img/jone-smith.png" alt="Jone smith">
-                    <div class="description">
-                        <div class="performer">
-                            <h3>Jone smith</h3>
-                            <span>Vocal</span>
+                <?php
+                foreach ($data['introducingSlider'] as $introducingSliders) {
+                    ?>
+                    <li>
+                        <img src="<?php echo $introducingSliders['img']; ?>"
+                             alt="<?php echo $introducingSliders['alt']; ?>">
+                        <div class="description">
+                            <div class="performer">
+                                <h3><?php echo $introducingSliders['name']; ?></h3>
+                                <span><?php echo $introducingSliders['occupation']; ?></span>
+                            </div>
+                            <ul class="social-items description-list">
+                                <?php
+                                foreach ($introducingSliders['socialLinksMember'] as $memberItem) {
+                                    ?>
+                                    <li>
+                                        <a href="<?php echo $memberItem['url']; ?>"><i
+                                                class="<?php echo $memberItem['class']; ?>" aria-hidden="true"></i></a>
+                                        <span><?php echo $memberItem['count']; ?></span>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
+                            </ul>
                         </div>
-                        <ul class="social-items description-list">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <span>32k</span>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <span>52k</span>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <span>23k</span>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/rendi-outhor.png" alt="Rendi Outhor">
-                    <div class="description">
-                        <div class="performer">
-                            <h3>Rendi Outhor</h3>
-                            <span>Drum</span>
-                        </div>
-                        <ul class="social-items description-list ">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <span>32k</span>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <span>52k</span>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <span>23k</span>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/renes-oldim.png" alt="Renes Odim">
-                    <div class="description">
-                        <div class="performer">
-                            <h3>Renes Odim</h3>
-                            <span>Guitar</span>
-                        </div>
-                        <ul class="social-items description-list">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <span>32k</span>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <span>52k</span>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <span>23k</span>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/jone-smith.png" alt="Jone smith">
-                    <div class="description">
-                        <div class="performer">
-                            <h3>Jone smith</h3>
-                            <span>Vocal</span>
-                        </div>
-                        <ul class="social-items description-list">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <span>32k</span>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <span>52k</span>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <span>23k</span>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/rendi-outhor.png" alt="Rendi Outhor">
-                    <div class="description">
-                        <div class="performer">
-                            <h3>Rendi Outhor</h3>
-                            <span>Drum</span>
-                        </div>
-                        <ul class="social-items description-list ">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <span>32k</span>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <span>52k</span>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <span>23k</span>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                    </li>
+                    <?php
+                }
+                ?>
             </ul>
         </div>
     </div>
@@ -208,78 +122,71 @@
         <div class="upcoming-latest-section">
             <section class="upcoming">
                 <div class="section-name">
-                    <h2>Upcoming
-                        <span>Consert</span></h2>
+                    <h2><?php $upcomingHeading = $data['upcomingHeading'];
+                        echo $upcomingHeading['title']; ?>
+                        <span><?php echo $upcomingHeading['partOfTitle']; ?></span></h2>
                 </div>
                 <div class="flexslider-concert">
                     <ul class="slides">
-                        <li>
-                            <div class="main-upcoming">
-                                <div class="picture-consert">
-                                    <img src="img/man-consert.png" alt="concert">
-                                    <div class="date-concert"><span>13</span> Jan</div>
+                        <?php
+                        foreach ($data['upcomingSlider'] as $upcomingSliders) {
+                            ?>
+                            <li>
+                                <div class="main-upcoming">
+                                    <div class="picture-consert">
+                                        <img src="<?php echo $upcomingSliders['img']; ?>" alt="concert">
+                                        <div class="date-concert">
+                                            <span><?php echo $upcomingSliders['number']; ?></span><?php echo $upcomingSliders['month']; ?>
+                                        </div>
+                                    </div>
+                                    <div class="consert-details">
+                                        <h3><?php echo $upcomingSliders['title']; ?></h3>
+                                        <ul class="location">
+                                            <li><?php echo $upcomingSliders['locationTitle']; ?>
+                                                <span>:</span><?php echo $upcomingSliders['location']; ?></li>
+                                            <li><?php echo $upcomingSliders['dateTitle']; ?>
+                                                <span>:</span><?php echo $upcomingSliders['date']; ?></li>
+                                            <li><?php echo $upcomingSliders['timeTitle']; ?>
+                                                <span>:</span><?php echo $upcomingSliders['time']; ?></li>
+                                            <li><?php echo $upcomingSliders['priceTitle']; ?>
+                                                <span>:</span><?php echo $upcomingSliders['price']; ?></li>
+                                        </ul>
+                                        <a href="<?php echo $purchaseButton['url']; ?>"
+                                           class="main-button button upcoming-button"><?php echo $purchaseButton['title']; ?></a>
+                                    </div>
                                 </div>
-                                <div class="consert-details">
-                                    <h3>Texas Rocks nation 2016</h3>
-                                    <ul class="location">
-                                        <li>Location<span>:</span>31 Great Smith Street, UK</li>
-                                        <li>Date<span>:</span>July 13, 2017</li>
-                                        <li>Time<span>:</span>10:00 AM</li>
-                                        <li>Price<span>:</span>$40</li>
-                                    </ul>
-                                    <a href="#" class="main-button button upcoming-button">purchase Ticket</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="main-upcoming">
-                                <div class="picture-consert">
-                                    <img src="img/concert-man.png" alt="concert">
-                                    <div class="date-concert"><span>14</span> Jan</div>
-                                </div>
-                                <div class="consert-details">
-                                    <h3>Texas Rocks nation 2016</h3>
-                                    <ul class="location">
-                                        <li>Location<span>:</span>31 Great Smith Street, UK</li>
-                                        <li>Date<span>:</span>July 14, 2017</li>
-                                        <li>Time<span>:</span>12:00 AM</li>
-                                        <li>Price<span>:</span>$60</li>
-                                    </ul>
-                                    <a href="#" class="main-button button upcoming-button">purchase Ticket</a>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                            <?php
+                        }
+                        ?>
                     </ul>
                 </div>
             </section>
             <section class="latest">
                 <div class="section-name">
-                    <h2>Latest
-                        <span>Videos</span></h2>
+                    <h2><?php $latestHeading = $data['latestHeading'];
+                        echo $latestHeading['title']; ?>
+                        <span><?php echo $latestHeading['partOfTitle']; ?></span></h2>
                 </div>
                 <div class="custom-navigation-videos">
-                    <a href="#" class="flex-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    <a href="#" class="flex-prev"><i
+                            class="<?php $latestDirectionLinks = $data['latestDirectionLinks'];
+                            echo $latestDirectionLinks['classPrev']; ?>" aria-hidden="true"></i></a>
                     <div class="custom-controls-container-videos"></div>
-                    <a href="#" class="flex-next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <a href="#" class="flex-next"><i class="<?php echo $latestDirectionLinks['classNext']; ?>"
+                                                     aria-hidden="true"></i></a>
                 </div>
                 <div class="flexslider-videos">
                     <ul class="slides">
-                        <li>
-                            <iframe src="https://www.youtube.com/embed/6IApU68VtfE?rel=0&amp;controls=0&amp;showinfo=0"
-                                    frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                        </li>
-                        <li>
-                            <iframe src="https://www.youtube.com/embed/ByZc23y7lNE?rel=0&amp;controls=0&amp;showinfo=0"
-                                    frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                        </li>
-                        <li>
-                            <iframe src="https://www.youtube.com/embed/c47aRVfv94o?rel=0&amp;controls=0&amp;showinfo=0"
-                                    frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                        </li>
-                        <li>
-                            <iframe src="https://www.youtube.com/embed/ByZc23y7lNE?rel=0&amp;controls=0&amp;showinfo=0"
-                                    frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                        </li>
+                        <?php
+                        foreach ($videoLinks = $data['videoLinks'] as $videoItem) {
+                            ?>
+                            <li>
+                                <?php echo $videoItem['iframe']; ?>
+                            </li>
+                            <?php
+                        }
+                        ?>
                     </ul>
                 </div>
             </section>
@@ -289,20 +196,25 @@
 <section class="learn-more">
     <div class="container ">
         <div class="learn-block">
-            <h2>Our Founder staying in our hearts</h2>
-            <p>1982 <span>cantus</span> Start jurny and now it‘s top class Rock Band in the California.</p>
-            <a class="button learn-more-button">learn more</a>
+            <h2><?php $learnMore = $data['learnMore'];
+                echo $learnMore['heading']; ?></h2>
+            <p><?php echo $learnMore['description']; ?></p>
+            <a class="button learn-more-button"><?php echo $learnMore['buttonLearn']; ?></a>
         </div>
     </div>
     <div class="popup">
         <div class="main-popup">
-            <a class="close-popup"><i class="fa fa-times" aria-hidden="true"></i>
+            <a class="close-popup"><i class="<?php $popup = $data['popup'];
+                $closePopup = $popup['closePopup'];
+                echo $closePopup['class']; ?>" aria-hidden="true"></i>
             </a>
             <div class="popup-content">
-                <span>Enter your email and we will write you!</span>
-                <form action="#" id="learn-form" name="learn-form" method="post" enctype="application/x-www-form-urlencoded">
-                    <input type="text" name="email" id="email" placeholder="Email Address" class="email">
-                    <input type="submit" class="submit" value="Submit">
+                <span><?php echo $popup['text'] ?></span>
+                <form action="#" id="learn-form" name="learn-form" method="post"
+                      enctype="application/x-www-form-urlencoded">
+                    <input type="text" name="email" id="email" placeholder="<?php $formPopup = $popup['formPopup'];
+                    echo $formPopup['inputPlaceholder']; ?>" class="email">
+                    <input type="submit" class="submit" value="<?php echo $formPopup['submitValue']; ?>">
                 </form>
             </div>
         </div>
@@ -313,34 +225,38 @@
         <div class="popular-instagram-block">
             <section class="popular">
                 <div class="section-name">
-                    <h2>POPULAR <span>Songs</span></h2>
+                    <h2><?php $popularHeading = $data['popularHeading'];
+                        echo $popularHeading['title']; ?>
+                        <span><?php echo $popularHeading['partOfTitle']; ?></span></h2>
                 </div>
-                <iframe scrolling="no" frameborder="no"
-                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/339767079&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+                <?php $songIframe = $data['songIframe'];
+                echo $songIframe; ?>
                 <ol class="songs">
-                    <li><a href="#">01. My heart is dancing</a></li>
-                    <li><a href="#">02. Good day</a></li>
-                    <li><a href="#">03. Life for rent</a></li>
-                    <li><a href="#">04. Hello It's me</a></li>
-                    <li><a href="#">05. My heart is dancing</a></li>
-                    <li><a href="#">06. Good day</a></li>
-                    <li><a href="#">07. Life for rent</a></li>
-                    <li><a href="#">08. Hello It's me</a></li>
-                    <li><a href="#">09. My heart is dancing</a></li>
-                    <li><a href="#">10. Good day</a></li>
-                    <li><a href="#">11. Life for rent</a></li>
-                    <li><a href="#">12. Hello It's me</a></li>
+                    <?php
+                    foreach ($songsList = $data['songsList'] as $song) {
+                        ?>
+                        <li><a href="<?php echo $song['url']; ?>"><?php echo $song['title']; ?></a></li>
+                        <?php
+                    }
+                    ?>
                 </ol>
             </section>
             <section class="instagram">
                 <div class="section-name">
-                    <h2>Instagram <span>Feed</span></h2>
+                    <h2><?php $instagramHeading = $data['instagramHeading'];
+                        echo $instagramHeading['title']; ?>
+                        <span><?php echo $popularHeading['partOfTitle']; ?></span></h2>
                 </div>
                 <div class="instagram-pictures">
-                    <a href="#"><img src="img/instagram-legs.png" alt="legs"></a>
-                    <a href="#"><img src="img/concert-man.png" alt="concert"></a>
-                    <a href="#"><img src="img/man-concert.png" alt="concert"></a>
-                    <a href="#"><img src="img/microphone.png" alt="microphone"></a>
+                    <?php
+                    foreach ($instagramPictures = $data['instagramPictures'] as $instagramPicture) {
+                        ?>
+                        <a href="<?php echo $instagramPicture['url']; ?>"><img
+                                src="<?php echo $instagramPicture['img']; ?>"
+                                alt="<?php echo $instagramPicture['alt']; ?>"></a>
+                        <?php
+                    }
+                    ?>
                 </div>
             </section>
         </div>
@@ -349,11 +265,18 @@
 <section class="download">
     <div class="container">
         <div class="download-block">
-            <h2>Download Our Official Apps</h2>
-            <p>Never stop listening. Take your playlists and likes wherever you go.</p>
+            <h2><?php $download = $data['download'];
+                echo $download['title']; ?></h2>
+            <p><?php echo $download['text']; ?></p>
             <div class="download-buttons">
-                <a href="#" class="app-store"><img src="img/app-store.png" alt="app store"></a>
-                <a href="#" class="google-play"><img src="img/google-play.png" alt="google play"></a>
+                <?php
+                foreach ($downloadAppsButtons = $download['downloadAppsButtons'] as $downloadButton) {
+                    ?>
+                    <a href="<?php echo $downloadButton['url']; ?>" class="<?php echo $downloadButton['class']; ?>"><img
+                            src="<?php echo $downloadButton['img']; ?>" alt="<?php echo $downloadButton['alt']; ?>"></a>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -361,22 +284,26 @@
 <div class="newsletter">
     <div class="container">
         <form action="#" id="form" name="form" method="post" enctype="application/x-www-form-urlencoded">
-            <textarea rows="1" cols="70" placeholder="subscribe newsletter"></textarea>
-            <button type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            <textarea rows="1" cols="70" placeholder="<?php $formNewsletter = $data['formNewsletter'];
+            echo $formNewsletter['textareaPlaceholder']; ?>"></textarea>
+            <button type="submit"><i class="<?php echo $formNewsletter['buttonClass']; ?>" aria-hidden="true"></i>
+            </button>
         </form>
     </div>
 </div>
 <footer>
     <div class="container">
         <ul class="footer-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Albums</a></li>
-            <li><a href="#">Pages</a></li>
+            <?php
+            foreach ($data['mainMenu'] as $menuItem) {
+                ?>
+                <li><a href="<?php echo $menuItem['url']; ?>"><?php echo $menuItem['title']; ?></a></li>
+                <?php
+            }
+            ?>
         </ul>
-        <p>Copyright © 2009–2016 <span>cantus</span> © their respective owners. Shipped from Salem, Mass. USA.</p>
+        <p><?php $copyright = $data['copyright'];
+            echo $copyright; ?></p>
     </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

@@ -33,6 +33,7 @@ footer {
         font: 400 13px $main-font;
 
         span {
+            text-transform: lowercase;
             color: $main-color;
             font: 400 28px $font-cursive;
             letter-spacing: 1.4px;

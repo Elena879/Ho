@@ -44,11 +44,5 @@ header {
             width: 100%;
             @extend .flex-between;
         }
-
-        .purchase {
-            padding: 22px 44px;
-            background-color: $white;
-            color: $main-color;
-        }
     }
 }
