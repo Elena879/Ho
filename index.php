@@ -52,9 +52,9 @@
 <section class="main-section">
     <div class="flexslider">
         <ul class="slides">
-            <li></li>
-            <li></li>
-            <li></li>
+            <li class="first-bg"></li>
+            <li class="second-bg"></li>
+            <li class="third-bg"></li>
         </ul>
         <div class="main-text">
             <div class="container">
